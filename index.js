@@ -33,7 +33,17 @@ app.get ("/poems", function (req,res){
 })
 
 
-app.get ("/:name", function (req,res){
-    console.log(req.params)
-    res.send(`Hello ${req.params.name}` )
-})
+app.get ("/poems/:writer", function (req,res){
+  var showPoem = req.params.writer;
+  var poemOut;
+  db.poems.forEach(function(poem){
+      if(poem.writer == showPoem){
+          poemOut = poem;
+           console.log(poemOut)
+      }
+  });
+  res.render("show",{
+      poem: poemOut
+  })
+ 
+});

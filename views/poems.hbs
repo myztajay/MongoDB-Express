@@ -1,7 +1,5 @@
 <h1>There are {{poems.length}} Poems</h1>
-
-
 {{#each poems as |poem| }}
-<p>{{poem.writer}}</p>
+<p><a href="/poems/{{poem.writer}}">{{poem.writer}}</a></p>
 <p>{{poem.poem}}</p>
 {{/each}}
