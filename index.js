@@ -15,7 +15,7 @@ app.engine(".hbs", hbs({ //extensions .hbs
 }));
 
 
-app.listen(process.env.PORT,process.env.IP, function(){
+app.listen(process.env.PORT, function(){
     console.log("I'm aliiiiive")
 })
 
